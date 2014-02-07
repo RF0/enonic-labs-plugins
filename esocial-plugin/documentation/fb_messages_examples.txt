@@ -1,0 +1,31 @@
+{
+    "error": {
+        "message": "This authorization code has expired.",
+        "type": "OAuthException",
+        "code": 100
+    }
+}
+
+   {
+        "error": {
+          "message": "Code was invalid or expired. User 672985836 has not authorized application 315674265157125.",
+          "type": "OAuthException",
+          "code": 100
+       }
+   }
+
+   {
+   "error": {
+      "message": "Error validating access token: User 672985836 has not authorized application 315674265157125.",
+      "type": "OAuthException",
+      "code": 190,
+      "error_subcode": 458
+   }
+}
+
+{
+   "error": {
+      "message": "This authorization code has been used.",
+      "type": "OAuthException",
+      "code": 100
+   }

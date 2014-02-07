@@ -1,0 +1,23 @@
+body {
+    padding-left:20px;
+    padding-right:20px;
+}
+.preservewhitespace {
+    white-space: pre;
+}
+
+section{
+    margin-top:20px;
+}
+
+.someObject .modifiedValue{
+    background-color: #ffdddd!important;
+}
+
+.someModifiedObject .modifiedValue{
+    background-color: #ccffcc!important;
+}
+
+section.someObjects{
+    padding-bottom:200px;
+}

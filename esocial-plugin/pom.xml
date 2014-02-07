@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.informedindividual</groupId>
+    <artifactId>ii-plugins</artifactId>
+    <version>1.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <groupId>com.enonic.cms.plugin.esocial</groupId>
+  <artifactId>eSocial</artifactId>
+  <packaging>cms-plugin</packaging>
+  <version>1.0</version>
+  <name>eSocial</name>
+
+  <properties>
+    <cms.version>4.7.4</cms.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.enonic.cms</groupId>
+      <artifactId>cms-api</artifactId>
+      <version>${cms.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.11</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.5</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>14.0.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>eSocialPlugin</finalName>
+    <plugins>
+      <plugin>
+        <groupId>com.enonic.cms.tools</groupId>
+        <artifactId>maven-cms-plugin</artifactId>
+        <version>1.0.0</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+                <copy todir="../plugins">
+                  <fileset dir="${project.build.directory}"
+                           includes="${project.build.finalName}.jar"/>
+                </copy>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>enonic</id>
+      <url>http://repo.enonic.com/maven</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>enonic</id>
+      <url>http://repo.enonic.com/maven</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>

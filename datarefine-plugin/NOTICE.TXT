@@ -1,0 +1,13 @@
+This software includes the following third party software:
+
+Joda Time
+  Apache License, Version 2.0
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Slf4j
+  MIT style license
+  http://www.slf4j.org/license.html
+
+Freemarker
+  BSD style license
+  http://freemarker.sourceforge.net/docs/app_license.html
