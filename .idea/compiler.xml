@@ -24,11 +24,14 @@
         <processorPath useClasspath="true" />
         <module name="datarefine-plugin" />
         <module name="eSocial" />
+        <module name="germ-plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="datarefine-plugin" target="1.7" />
       <module name="enonic-labs-plugins" target="1.6" />
+      <module name="eSocial" target="1.7" />
+      <module name="germ-plugin" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

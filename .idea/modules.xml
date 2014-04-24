@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/datarefine-plugin/datarefine-plugin.iml" filepath="$PROJECT_DIR$/datarefine-plugin/datarefine-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/esocial-plugin/eSocial.iml" filepath="$PROJECT_DIR$/esocial-plugin/eSocial.iml" />
       <module fileurl="file://$PROJECT_DIR$/enonic-labs-plugins.iml" filepath="$PROJECT_DIR$/enonic-labs-plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/germ-plugin/germ-plugin.iml" filepath="$PROJECT_DIR$/germ-plugin/germ-plugin.iml" />
     </modules>
   </component>
 </project>
