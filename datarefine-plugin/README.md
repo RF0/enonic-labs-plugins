@@ -1,11 +1,25 @@
-#Datarefine plugin
+##datarefine-plugin
+Plugin to refine messy data. Clean up dataset, mass edit in Enonic CMS Admin.
 
-Welcome to the Enonic Datarefine Plugin.
+urlPatterns : /admin/site/[0-9]/datarefine-plugin.*
 
-##Building
+Status: FINISHED
 
-Build all code and create Enonic CMS deployable jar file with
-    mvn clean install
+Tested on Enonic CMS 4.7.x
+
+Read more on:
+http://labs.enonic.com/articles/datarefine-plugin
+
+##esocial-plugin
+Facebook login plugin.
+
+urlPatterns : /site/[0,5]/facebook-signin.*
+
+Status: BETA.
+
+Ready for testing. Login implemented, creating user in Enonic CMS Facebook userstore for new users.
+
+Tested on Enonic CMS 4.7.x
 
 ##License
 
