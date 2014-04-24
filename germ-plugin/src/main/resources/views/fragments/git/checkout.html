@@ -1,0 +1,106 @@
+<section
+        data-th-fragment="checkout-status"
+        data-th-if="${remotebranches!=null and not remotebranches.isEmpty()}"
+        id="git-checkout">
+
+    <div data-th-if="${checkoutFileResult!=null}">
+        <p data-th-text="|Checkout status: ${checkoutFileResult.getStatus()}|"/>
+
+        <div data-th-if="${not checkoutFileResult.getConflictList().isEmpty()}">
+            <p>Conflicts:</p>
+            <ul>
+                <li data-th-each="conflict : ${checkoutFileResult.getConflictList()}" data-th-text="${conflict}"></li>
+            </ul>
+        </div>
+
+        <div data-th-if="${not checkoutFileResult.getUndeletedList().isEmpty()}">
+            <p>Undeleted:</p>
+            <ul>
+                <li data-th-each="undeleted : ${checkoutFileResult.getUndeletedList()}" data-th-text="${undeleted}"></li>
+            </ul>
+        </div>
+
+        <div data-th-if="${not checkoutFileResult.getRemovedList().isEmpty()}">
+            <p>Removed:</p>
+            <ul>
+                <li data-th-each="removed : ${checkoutFileResult.getRemovedList()}" data-th-text="${removed}"></li>
+            </ul>
+        </div>
+        <div data-th-if="${not checkoutFileResult.getModifiedList().isEmpty()}">
+            <p>Modified:</p>
+            <ul>
+                <li data-th-each="modified : ${checkoutFileResult.getModifiedList()}" data-th-text="${modified}"></li>
+            </ul>
+        </div>
+    </div>
+
+    <form method="post"
+          data-th-action="${url + '/germ/' + requestPath}"
+          class="pure-form pure-form-stacked">
+        <legend>Git checkout - <span class="smaller">checkout a branch or paths to the working tree</span></legend>
+        <span data-th-if="${localbranches.isEmpty()}">There is no local branch checked out.</span>
+        <fieldset>
+            <select name="branch" id="branch">
+                <option>Select branch</option>
+                <option data-th-each="remotebranch : ${remotebranches}" data-th-value="${remotebranch.getName()}"
+                        data-th-text="${remotebranch.getName()}"/>
+            </select>
+            <input type="hidden" name="cmd" value="checkout"/>
+            <input type="submit" value="Checkout" class="pure-button pure-button-primary"/>
+        </fieldset>
+    </form>
+</section>
+
+
+<section
+        data-th-fragment="checkout-file"
+        data-th-if="${remotebranches!=null and not remotebranches.isEmpty() and checkoutfiles!=null}"
+        id="git-checkout-file">
+
+    <div data-th-if="${checkoutFileResult!=null}">
+        <p data-th-text="|Checkout status: ${checkoutFileResult.getStatus()}|"/>
+
+        <div data-th-if="${not checkoutFileResult.getConflictList().isEmpty()}">
+            <p>Conflicts:</p>
+            <ul>
+                <li data-th-each="conflict : ${checkoutFileResult.getConflictList()}" data-th-text="${conflict}"></li>
+            </ul>
+        </div>
+
+        <div data-th-if="${not checkoutFileResult.getUndeletedList().isEmpty()}">
+            <p>Undeleted:</p>
+            <ul>
+                <li data-th-each="undeleted : ${checkoutFileResult.getUndeletedList()}" data-th-text="${undeleted}"></li>
+            </ul>
+        </div>
+
+        <div data-th-if="${not checkoutFileResult.getRemovedList().isEmpty()}">
+            <p>Removed:</p>
+            <ul>
+                <li data-th-each="removed : ${checkoutFileResult.getRemovedList()}" data-th-text="${removed}"></li>
+            </ul>
+        </div>
+        <div data-th-if="${not checkoutFileResult.getModifiedList().isEmpty()}">
+            <p>Modified:</p>
+            <ul>
+                <li data-th-each="modified : ${checkoutFileResult.getModifiedList()}" data-th-text="${modified}"></li>
+            </ul>
+        </div>
+    </div>
+
+    <form method="post"
+          data-th-action="${url + '/germ/' + requestPath}"
+          class="pure-form pure-form-stacked">
+        <legend>Git file checkout - <span class="smaller">checkout a single file from a specifig commit hash</span></legend>
+        <fieldset>
+            <select name="checkoutfile" id="checkoutfile">
+                <option>Select file</option>
+                <option data-th-each="checkoutfile : ${checkoutfiles}" data-th-value="${checkoutfile.getName()}"
+                        data-th-text="${checkoutfile.getName()}"/>
+            </select>
+            <input type="text" pattern=".{16,}" title="16 characters minimum" required="true" name="sha1" placeholder="Enter SHA-1"/>
+            <input type="hidden" name="cmd" value="checkoutfile"/>
+            <input type="submit" value="Checkout file" class="pure-button pure-button-primary"/>
+        </fieldset>
+    </form>
+</section>

@@ -1,1 +1,5 @@
 *.iml
+.idea
+.DS_Store
+plugins
+*.class

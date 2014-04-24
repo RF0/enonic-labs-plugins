@@ -1,0 +1,34 @@
+<section
+    data-th-fragment="table(commits)"
+    data-th-if="${commits!=null}"
+    id="git-commits">
+
+    <table class="pure-table pure-table-bordered pure-table-striped commits">
+        <thead>
+        <tr>
+            <th>Sha1</th>
+            <th>Time</th>
+            <th>Committer name</th>
+            <th>Committer e-mail</th>
+            <th>Comment</th>
+        </tr>
+        </thead>
+        <tr data-th-each="commit : ${commits}"
+            data-th-if="${commit!=null}"
+            data-th-with="thisCommit=${#strings.substring(commit.getId().toString().split(' ')[1],0,16)}">
+        <span data-th-switch="${thisCommit}">
+            <td data-th-case="${headCommit}"
+                data-th-text="${#strings.substring(thisCommit,0,16)}"
+                data-th-class="'head-commit'"/>
+            <td data-th-case="*"
+                data-th-text="${#strings.substring(thisCommit,0,16)}"
+                data-th-class="''"/>
+        </span>
+
+            <td><span data-th-text="${commit.getCommitterIdent().getWhen()}"/></td>
+            <td><span data-th-text="${commit.getCommitterIdent().getName()}"/></td>
+            <td><span data-th-text="${commit.getCommitterIdent().getEmailAddress()}"/></td>
+            <td data-th-text="${commit.getFullMessage()}">No commit message</td>
+        </tr>
+    </table>
+</section>

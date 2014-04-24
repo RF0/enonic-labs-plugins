@@ -1,0 +1,12 @@
+<section
+    data-th-fragment="file-list(files)"
+    data-th-if="${files!=null}"
+    id="file-list">
+    <ul class="pure-u-1 pure-u-med-1-3 tree">
+        <li data-th-if="${file.getName() != '.git'}" data-th-each="file: ${files}">
+            <span data-th-text="${file.getName()}"/>
+            <ol data-th-if="${file.isDirectory()}"
+                data-th-replace="fragments/git/files :: file-list(${file.listFiles()})"/>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,255 @@
+/*body{background-color: white}
+h1 {color:black;}
+
+.bold{font-weight: bold}
+.italic{font-style: italic}
+table{margin-bottom: 10px}
+ul, li{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+ol{
+    margin:0;
+}
+
+.directory{
+    color:brown;
+}
+
+.file{
+    color:black;
+}
+
+ul.tree, ul.tree ul {
+    list-style-type: none;
+    background: url(node.png) repeat-y;
+    margin: 0;
+    padding: 0;
+}
+
+ul.tree ul {
+    margin-left: 10px;
+}
+
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background: url(node.png) no-repeat;
+    color: #369;
+    font-weight: bold;
+}
+
+ul.tree li:last-child {
+    background: #fff url(lastnode.png) no-repeat;
+}
+
+
+
+.splash-container {
+    background: #1f8dd6;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
+}
+
+.splash {
+    width: 80%;
+    height: 199px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.home-menu ul {
+    float: right;
+}
+.messages li {color:white;padding:2px; margin:2px;text-align: center}
+.messages li.ERROR {background-color: #ffbaba;color:#dc222d;border: 1px solid #dc222d}
+.messages li.WARNING {background-color: #feefb3;color:#a97223;border: 1px solid #a97223}
+.messages li.INFO {background-color: #dff2bf;color:#659730;border: 1px solid #659730}
+
+.clean-gray li{
+    border:solid 1px #DEDEDE;
+    background-color: #FFBABA;;
+    color:#D8000C;
+    padding:3px;
+    margin-bottom: 2px;
+    text-align:center;
+}
+
+.content-wrapper {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    min-height: 12%;
+    z-index: 2;
+    background: white;
+}
+.content {
+    padding: 1em;
+}
+
+.content-head {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1.5em 0 1em;
+}
+
+.is-center {
+    text-align: center;
+}
+
+table{width:100%}
+
+.header{
+    position: fixed!important;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.repository-info{
+    margin-bottom: 10px;
+}
+
+table.commits td.head-commit, .head-commit{
+    background-color: forestgreen;
+    color: white;
+}
+
+form.remote-form input.originUrl {
+    width:500px;
+}
+
+form input[type="submit"]{
+    width: 200px;
+}*/
+
+.messages li {color:white;padding:2px; margin:2px;text-align: center;list-style: none;}
+.messages li.ERROR {background-color: #ffbaba;color:#dc222d;border: 1px solid #dc222d}
+.messages li.WARNING {background-color: #feefb3;color:#a97223;border: 1px solid #a97223}
+.messages li.INFO {background-color: #dff2bf;color:#659730;border: 1px solid #659730}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+}
+
+.button-error {
+    background: rgb(202, 60, 60);
+}
+
+.button-warning {
+    background: rgb(223, 117, 20);
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221);
+}
+
+.strong{
+    font-weight: bold;
+}
+.italics{
+    font-style: italic;
+}
+
+.smaller{
+    font-size: smaller;
+}
+.small{
+    font-size: small;
+}
+.large{
+    font-size: large;
+}
+.larger{
+     font-size: larger;
+ }
+
+.emphasis{
+    text-shadow: 0 0 1px #999;
+    border-bottom: 1px dashed;
+}
+
+.break-all{
+    word-break: break-all;
+}
+
+h1,h2,h3,h4,h5{
+    margin:0;
+}
+
+form input[type="submit"]{
+    width: 200px;
+}
+
+form.remote-form input.originUrl {
+    width:300px;
+}
+
+table.commits td.head-commit, .head-commit{
+    background-color: forestgreen;
+    color: white;
+}
+
+.directory{
+    color:brown;
+}
+
+.file{
+    color:black;
+}
+
+ul.tree, ul.tree ul {
+    list-style-type: none;
+    background: url(node.png) repeat-y;
+    margin: 0;
+    padding: 0;
+}
+
+ul.tree ul {
+    margin-left: 10px;
+}
+
+ul.tree li {
+    margin: 0;
+    padding: 0 12px;
+    line-height: 20px;
+    background: url(node.png) no-repeat;
+    color: #369;
+    font-weight: bold;
+}
+
+ul.tree li:last-child {
+    background: #fff url(lastnode.png) no-repeat;
+}
+
+section{
+    margin-bottom: 30px;
+}
+
+.submenu{
+    font-size: smaller;
+    padding-left: 15px;
+}

@@ -1,0 +1,22 @@
+<p data-th-if="${requestPath!=null}" data-th-replace="fragments/intro :: ${requestPath}"/>
+
+<section data-th-replace="fragments/git/init :: init-status"/>
+
+<span data-th-if="${#strings.isEmpty(originUrl)}">
+    <section data-th-replace="fragments/git/remote :: remote-form"/>
+</span>
+
+<span data-th-if="${remotebranches!=null and remotebranches.isEmpty()}">
+    <section data-th-replace="fragments/git/fetch :: fetch-form"/>
+</span>
+
+<span data-th-if="${localbranches!=null and not localbranches.isEmpty()}">
+    <section data-th-replace="fragments/git/rebase :: rebase-form"/>
+</span>
+
+<section data-th-replace="fragments/git/clean :: clean-status"/>
+<section data-th-replace="fragments/git/checkout :: checkout-status"/>
+<section data-th-replace="fragments/git/reset :: reset"/>
+<section data-th-replace="fragments/git/commits :: table(${remoteBranchCommits})"/>
+<section data-th-replace="fragments/git/files :: file-list(${files})"/>
+

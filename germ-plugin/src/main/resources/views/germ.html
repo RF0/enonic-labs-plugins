@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--http://www.thymeleaf.org/whatsnew21.html-->
+<head data-th-include="fragments/head :: common"/>
+<body>
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="#">G.E.R.M</a>
+            <ul data-th-replace="fragments/navigation :: top"/>
+        </div>
+    </div>
+    <div id="main">
+        <div class="header">
+            <h1>G.E.R.M</h1>
+
+            <h2>Git Enonic Release Management</h2>
+        </div>
+        <div class="content">
+
+            <ul data-th-if="${messages and not messages.isEmpty()}" class="messages">
+                <li data-th-each="message : ${messages}"
+                    data-th-if="${message.getMessage()!=null and not message.getMessage().isEmpty()}"
+                    data-th-class="${message.getMessageType()}"
+                    data-th-text="${message.getMessage()}"/>
+            </ul>
+
+            <h3 class="content-subhead" data-th-text="${requestPath}"/>
+
+            <span data-th-if="${accessDenied}" data-th-include="fragments/login :: login-form"></span>
+
+            <div data-th-if="${requestPath!=null and not requestPath.isEmpty()}">
+                <div data-th-replace="${requestPath}"/>
+            </div>
+        </div>
+    </div>
+</div>
+<footer data-th-include="fragments/footer :: scripts"/>
+</body>
+</html>

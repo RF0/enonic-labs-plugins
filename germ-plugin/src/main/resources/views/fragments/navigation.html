@@ -1,0 +1,33 @@
+<ul data-th-fragment="top">
+    <li data-th-class="${requestPath == 'resources' ? 'pure-menu-selected ' : ''} + 'menu-item-divided'">
+        <a data-th-href="${url + '/germ/resources'}">Resources</a>
+    </li>
+    <li data-th-if="${not #strings.isEmpty(resourcesRemoteUrl)}"
+        data-th-class="${requestPath == 'resources/remote' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/resources/remote'}">|_Remote / Fetch</a>
+    </li>
+    <li data-th-if="${resourcesRepository!=null and resourcesRepository.getDirectory().isDirectory()}"
+        data-th-class="${requestPath == 'resources/status' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/resources/status'}">|_Status</a>
+    </li>
+    <li data-th-if="${resourcesRepository!=null and resourcesRepository.getDirectory().isDirectory()}"
+        data-th-class="${requestPath == 'resources/files' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/resources/files'}">|_Files</a>
+    </li>
+    <li data-th-class="${requestPath == 'plugins' ? 'pure-menu-selected ' : ''} + 'menu-item-divided'">
+        <a data-th-href="${url + '/germ/plugins'}">Plugins</a>
+    </li>
+    <li data-th-if="${not #strings.isEmpty(pluginsRemoteUrl)}"
+        data-th-class="${requestPath == 'plugins/remote' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/plugins/remote'}">|_Remote / Fetch</a>
+    </li>
+    <li data-th-if="${pluginsRepository!=null and pluginsRepository.getDirectory().isDirectory()}"
+        data-th-class="${requestPath == 'plugins/status' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/plugins/status'}">|_Status</a>
+    </li>
+    <li data-th-if="${resourcesRepository!=null and resourcesRepository.getDirectory().isDirectory()}"
+        data-th-class="${requestPath == 'plugins/files' ? 'pure-menu-selected ' : ''} + 'menu-item-divided submenu'">
+        <a data-th-href="${url + '/germ/plugins/files'}">|_Files</a>
+    </li>
+</ul>
+

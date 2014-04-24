@@ -1,0 +1,1 @@
+Main-Class: com.enonic.cms.plugin.germ.GermPluginController

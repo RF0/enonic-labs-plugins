@@ -1,0 +1,20 @@
+<section
+        data-th-fragment="clean-status"
+        data-th-if="${repository!=null and repository.getDirectory().exists()}"
+        id="git-clean">
+
+    <form method="post"
+          data-th-action="${url + '/germ/' + requestPath}"
+          class="pure-form pure-form-stacked">
+        <legend>Git clean - <span class="smaller">cleans the working tree by recursively removing files that are not under version control.</span></legend>
+        <fieldset>
+            <input type="hidden" name="cmd" value="clean"/>
+            <input type="submit" value="Clean" class="pure-button pure-button-primary"/>
+        </fieldset>
+    </form>
+
+    <ul data-th-if="${cleanedFiles!=null and not cleanedFiles.isEmpty()}">
+        <li>Cleaned:</li>
+        <li data-th-each="file : ${cleanedFiles}" data-th-text="${file}"></li>
+    </ul>
+</section>

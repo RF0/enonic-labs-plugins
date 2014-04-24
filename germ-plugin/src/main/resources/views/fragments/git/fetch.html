@@ -1,0 +1,18 @@
+<section
+        data-th-fragment="fetch-form"
+        data-th-if="${originUrl!=null}"
+        id="git-fetch">
+
+    <form method="post"
+          data-th-action="${url + '/germ/' + requestPath}"
+          class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>Git fetch - <span class="smaller">download objects and refs from remote repository</span></legend>
+            <input type="hidden" name="cmd" value="fetch"/>
+            <input type="text" name="gitusername" id="gitusername" placeholder="Enter git username"
+                   data-th-value="${gitusername!=null ? gitusername : ''}"/>
+            <input type="password" name="gitpassword" id="gitpassword" placeholder="Enter git password"/>
+            <input type="submit" value="Fetch remote origin" class="pure-button pure-button-primary"/>
+        </fieldset>
+    </form>
+</section>

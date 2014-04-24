@@ -1,0 +1,23 @@
+<section
+    data-th-fragment="remote-form"
+    data-th-if="${repository!=null and repository.getDirectory().exists()}"
+        id="git-remote">
+
+    <form method="post"
+          data-th-switch="${originUrl}"
+          data-th-action="${url + '/germ/' + requestPath}" class="pure-form pure-form-stacked remote-form">
+        <legend>Git remote - <span class="smaller">manage the remote origin whose branches you track.</span></legend>
+        <p data-th-text="${originUrl}"></p>
+        <fieldset data-th-case="null">
+            <legend data-th-if="${originUrl!=null}" data-th-text="${originUrl}">No remote origin is defined, add new remote origin.</legend>
+            <input type="hidden" name="cmd" value="addremote"/>
+            <input type="url" name="originUrl" class="originUrl smaller" required="true" placeholder="Remote origin url"/>
+            <input type="submit" value="Add origin" class="pure-button pure-button-primary"/>
+        </fieldset>
+        <fieldset data-th-case="*">
+            <input type="hidden" name="cmd" value="rmremote"/>
+            <input type="submit" value="Remove remote origin" class="pure-button pure-button-primary"/>
+            <!--<input type="url" name="originUrl" class="originUrl" readonly="true" data-th-value="${originUrl}"/>-->
+        </fieldset>
+    </form>
+</section>

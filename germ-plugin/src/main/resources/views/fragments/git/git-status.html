@@ -1,0 +1,74 @@
+<section
+    data-th-fragment="git-status"
+    data-th-if="${status!=null and repository!=null and repository.getDirectory().isDirectory()}"
+    id="git-status">
+    <p>Git status.</p>
+    <table class="pure-table pure-table-bordered pure-table-striped">
+        <thead>
+        <tr>
+            <th>Git repository status</th>
+            <th>Paths</th>
+        </tr>
+        </thead>
+        <tr data-th-if="${not status.getAdded().isEmpty()}">
+            <td>Added</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getAdded()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getChanged().isEmpty()}">
+            <td>Changed</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getChanged()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getConflicting().isEmpty()}">
+            <td>Conflicting</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getConflicting()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getModified().isEmpty()}">
+            <td>Modified</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getModified()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getConflictingStageState().isEmpty()}">
+            <td>ConflictingStageState</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getConflictingStageState()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getIgnoredNotInIndex().isEmpty()}">
+            <td>IgnoredNotInIndex</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getIgnoredNotInIndex()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getMissing().isEmpty()}">
+            <td>Missing</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getMissing()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getRemoved().isEmpty()}">
+            <td>Removed</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getRemoved()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getUntracked().isEmpty()}">
+            <td>Untracked</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getUntracked()})"/>
+            </td>
+        </tr>
+        <tr data-th-if="${not status.getUntrackedFolders().isEmpty()}">
+            <td>UntrackedFolders</td>
+            <td>
+                <ul data-th-replace="fragments/array :: array(${status.getUntrackedFolders()})"/>
+            </td>
+        </tr>
+    </table>
+</section>

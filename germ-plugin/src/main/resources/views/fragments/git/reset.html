@@ -1,0 +1,13 @@
+<section
+    data-th-fragment="reset"
+    data-th-if="${originUrl!=null and localBranchCommits!=null}"
+    id="git-reset">
+    <form method="post" data-th-action="${url + '/germ/' + requestPath}" class="pure-form pure-form-stacked">
+        <legend>Git reset - <span class="smaller">reset current HEAD to the specified state</span></legend>
+        <fieldset>
+            <input type="hidden" name="cmd" value="reset"/>
+            <input type="text" pattern=".{16,}" title="16 characters minimum" required="true" name="sha1" placeholder="Enter SHA-1"/>
+            <input type="submit" value="Reset to SHA-1" class="pure-button pure-button-primary"/>
+        </fieldset>
+    </form>
+</section>

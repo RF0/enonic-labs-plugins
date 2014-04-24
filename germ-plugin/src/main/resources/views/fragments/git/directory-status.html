@@ -1,0 +1,24 @@
+<section
+        data-th-fragment="directory-status"
+        data-th-if="${repository!=null and repository.getDirectory().isDirectory()}"
+        id="directory-status">
+    <p>Directory status.</p>
+    <table class="pure-table pure-table-bordered pure-table-striped">
+        <thead>
+        <tr>
+            <th>isDirectory</th>
+            <th>canWrite</th>
+            <th>Free space</th>
+            <th>Branch</th>
+            <th>State</th>
+        </tr>
+        </thead>
+        <tr>
+            <td data-th-text="${repository.getDirectory().isDirectory()}"></td>
+            <td data-th-text="${repository.getDirectory().canWrite()}"></td>
+            <td data-th-text="${repository.getDirectory().getFreeSpace() / 1000000 + ' mb'}"></td>
+            <td data-th-text="${repository.getBranch()}"></td>
+            <td data-th-text="${repository.getRepositoryState().getDescription()}"></td>
+        </tr>
+    </table>
+</section>

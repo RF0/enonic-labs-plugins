@@ -1,0 +1,15 @@
+<p data-th-fragment="plugins" data-th-replace="fragments/intro :: intro('plugins')"/>
+<p data-th-fragment="resources" data-th-replace="fragments/intro :: intro('resources')"/>
+
+<div class="break-all" data-th-fragment="intro(foldername)" >
+    <p>
+        Your <span data-th-text="${foldername}"/> folder is located in <span class="emphasis" data-th-if="${directory!=null}" data-th-text="${directory.getAbsolutePath()}" />.
+        <span data-th-if="${repository!=null and repository.getDirectory().exists()}"> Git repository is initiated in
+        <span class="emphasis" data-th-text="${repository.getDirectory().getAbsolutePath()}"/>.</span>
+        <span data-th-if="${originUrl!=null}"> Git remote is
+        <span class="emphasis" data-th-text="${originUrl}"/>.</span>
+        <span data-th-if="${repository!=null and repository.getBranch()!=null and not repository.getBranch().isEmpty()}">Active branch is </span>
+        <span class="emphasis" data-th-text="${repository.getBranch()}"/>.
+
+    </p>
+</div>

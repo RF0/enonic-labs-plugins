@@ -1,0 +1,54 @@
+<html>
+
+<head data-th-include="fragments/head :: common"/>
+
+<body>
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" data-th-href="${url + '/germ'}">G.E.R.M.</a>
+            <ul data-th-replace="fragments/navigation :: top"/>
+        </div>
+    </div>
+    <div class="splash-container">
+        <div class="splash">
+
+            <h1 data-th-text="'Git Enonic Release Management'"/>
+            <h2 data-th-text="${requestPath}"/>
+
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <ul data-th-if="${messages}" class="messages">
+                <li data-th-if="${message.getMessage()!=null and not message.getMessage().isEmpty()}" data-th-class="${message.getMessageType()}" data-th-each="message : ${messages}" data-th-text="${message.getMessage()}"/>
+            </ul>
+
+            <h2 class="content-head is-center" data-th-text="${requestPath}"/>
+
+            <p class="is-center" data-th-if="${requestPath.isEmpty()}">
+                <a data-th-href="${url + '/germ/resources'}" class="pure-button pure-button-primary">Get Started</a>
+            </p>
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-med-1-2 pure-u-lrg-1-4">
+
+                    <div data-th-if="${requestPath!=null and not requestPath.isEmpty()}">
+                        <div data-th-replace="${requestPath}"/>
+                    </div>
+
+                    <!--<h3 class="content-subhead">
+                        <i class="fa fa-rocket"></i>
+                        Get Started Quickly
+                    </h3>
+                    <p>
+                        Phasellus eget enim eu lectus faucibus vestibulum.
+                    </p>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

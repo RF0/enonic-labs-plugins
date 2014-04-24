@@ -1,0 +1,11 @@
+<section
+        data-th-fragment="init-status"
+        data-th-if="${repository!=null and not repository.getDirectory().exists()}"
+        id="git-init">
+    <form method="post"
+          data-th-action="${url + '/germ/' + requestPath}" class="pure-form pure-form-stacked">
+        <legend>Git init - <span class="smaller">create an empty git repository. This will not affect you existing files.</span></legend>
+        <input type="hidden" name="cmd" value="init"/>
+        <input type="submit" value="Init git repository" class="pure-button pure-button-primary"/>
+    </form>
+</section>
