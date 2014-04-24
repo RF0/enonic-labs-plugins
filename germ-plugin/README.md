@@ -1,13 +1,17 @@
-##esocial-plugin
-Facebook login plugin.
+#germ-plugin
+G.E.R.M - Git Enonic Release Management - A plugin that connects Enonic CMS to Git, and allows to pull code directly from any
+git remote into CMS_HOME resources and plugin folders. Requires that git is installed on the serer.
 
-urlPatterns : /site/[0,5]/facebook-signin.*
+urlPatterns : /admin/site/[0-9]/germ.*
 
 Status: BETA.
 
-Ready for testing. Login implemented, creating user in Enonic CMS Facebook userstore for new users.
+Ready for testing, all core functionality in place: add remote, fetch, reset, status.
 
 Tested on Enonic CMS 4.7.x
+
+More on GERM here:
+https://enonic.com/en/docs/enonic-cms-47?page=Development+Process+-+GERM
 
 ##License
 
