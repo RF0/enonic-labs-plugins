@@ -5,11 +5,11 @@ This repository is organized with a parent pom that contains sub projects that c
 
 ##Building
 
-Build all code and create Enonic CMS deployable jar file with
-    mvn clean install
+Build all code and create Enonic CMS deployable jar file with "mvn clean install"
 
 ##datarefine-plugin
 Plugin to refine messy data. Clean up dataset, mass edit in Enonic CMS Admin.
+
 urlPatterns : /admin/site/[0-9]/datarefine-plugin.*
 
 Status: FINISHED
@@ -21,19 +21,25 @@ http://labs.enonic.com/articles/datarefine-plugin
 
 ##esocial-plugin
 Facebook login plugin.
+
 urlPatterns : /site/[0,5]/facebook-signin.*
 
 Status: BETA.
+
 Ready for testing. Login implemented, creating user in Enonic CMS Facebook userstore for new users.
+
 Tested on Enonic CMS 4.7.x
 
 ##germ-plugin
 G.E.R.M - Git Enonic Release Management - A plugin that connects Enonic CMS to Git, and allows to pull code directly from any
-git remote into CMS_HOME resources and plugin folders.
+git remote into CMS_HOME resources and plugin folders. Requires that git is installed on the serer.
+
 urlPatterns : /admin/site/[0-9]/germ.*
 
 Status: BETA.
+
 Ready for testing, all core functionality in place: add remote, fetch, reset, status.
+
 Tested on Enonic CMS 4.7.x
 
 More on GERM here:
